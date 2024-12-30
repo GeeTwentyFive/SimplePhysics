@@ -5,6 +5,7 @@ Simple single-header cross-platform 3D AABB physics simulation library
 2) Call `SimplePhysics__Tick()`
 
 # Example:
+(press ENTER to do a physics tick (scaled by deltatime))
 ```c
 #include <stdio.h>
 
