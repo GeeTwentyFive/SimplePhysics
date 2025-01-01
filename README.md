@@ -24,6 +24,8 @@ void CollisionCallback(SimplePhysics__Object *collider, SimplePhysics__Object *c
 int main() {
 
         SimplePhysics__Vector3 fallingObjectPosition = {0, 30, 0};
+        SimplePhysics__Vector3 fallingObjectVelocity = {0, 0, 0};
+
         SimplePhysics__Vector3 staticObjectPosition = {0, 0, 0};
 
 
@@ -41,7 +43,7 @@ int main() {
                         },
                         0,
                         &fallingObjectPosition,
-                        &(SimplePhysics__Vector3) {0, 0, 0},
+                        &fallingObjectVelocity,
                         "Falling object"
                 );
 
@@ -56,7 +58,7 @@ int main() {
                         },
                         1,
                         &staticObjectPosition,
-                        &(SimplePhysics__Vector3) {0, 0, 0},
+                        0,
                         "Static object"
                 );
 
@@ -67,10 +69,16 @@ int main() {
 
 
                 printf(
-                        "Falling object position:\n%f\n%f\n%f\n",
+                        "Falling object position:\n%f\n%f\n%f",
                         fallingObjectPosition.x,
                         fallingObjectPosition.y,
                         fallingObjectPosition.z
+                );
+                printf(
+                        "Falling object velocity:\n%f\n%f\n%f\n",
+                        fallingObjectVelocity.x,
+                        fallingObjectVelocity.y,
+                        fallingObjectVelocity.z
                 );
 
         }
