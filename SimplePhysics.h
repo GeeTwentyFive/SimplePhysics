@@ -139,8 +139,8 @@ SimplePhysics__Error SimplePhysics__Tick(_SimplePhysics__float gravity, SimplePh
                 if (_SimplePhysics__objects[i].bStatic) break;
 
                 // Apply gravity (*unless already falling at or above terminal velocity)
-                if (_SimplePhysics__objects[i].velocity->y < gravity) {
-                        _SimplePhysics__objects[i].velocity->y -= gravity;
+                if (_SimplePhysics__objects[i].velocity->y > -gravity) {
+                        _SimplePhysics__objects[i].velocity->y -= gravity * deltaTime;
                 }
 
 
