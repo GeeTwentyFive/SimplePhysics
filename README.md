@@ -69,7 +69,7 @@ int main() {
 
 
                 printf(
-                        "Falling object position:\n%f\n%f\n%f",
+                        "Falling object position:\n%f\n%f\n%f\n",
                         fallingObjectPosition.x,
                         fallingObjectPosition.y,
                         fallingObjectPosition.z
