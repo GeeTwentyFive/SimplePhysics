@@ -111,7 +111,7 @@ SimplePhysics__Error SimplePhysics__Add(
 SimplePhysics__Error SimplePhysics__Tick(_SimplePhysics__float gravity, SimplePhysics__CollisionCallback collisionCallback) {
 
         if (!_SimplePhysics__bInitialized) {
-                if (clock_gettime(CLOCK_MONOTONIC, &_SimplePhysics__previousTime) != 0) return SimplePhysics__ERROR_FAILED_TO_GET_TIME;
+                if (clock_gettime(CLOCK_REALTIME, &_SimplePhysics__previousTime) != 0) return SimplePhysics__ERROR_FAILED_TO_GET_TIME;
                 _SimplePhysics__bInitialized = 1;
         }
 
@@ -120,7 +120,7 @@ SimplePhysics__Error SimplePhysics__Tick(_SimplePhysics__float gravity, SimplePh
         // Get delta time & update saved time for next tick
 
         struct timespec currentTime;
-        if (clock_gettime(CLOCK_MONOTONIC, &currentTime) != 0) return SimplePhysics__ERROR_FAILED_TO_GET_TIME;
+        if (clock_gettime(CLOCK_REALTIME, &currentTime) != 0) return SimplePhysics__ERROR_FAILED_TO_GET_TIME;
 
         _SimplePhysics__float deltaTime = (_SimplePhysics__float) (
                 ((currentTime.tv_sec * 1000000000) + currentTime.tv_nsec) -
